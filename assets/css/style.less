@@ -1,0 +1,43 @@
+@import "responsive.less";
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@primary: #2D4059;
+@secondary: #222831;
+@letter: #EEEEEE;
+@decor: #FF5722;
+@width: 100%;
+@height: 70px;
+@border: 1px;
+.text{
+    color: @letter;
+    font-size: 20px;
+}
+.heading{
+    color: @decor;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+hr{
+    color: @decor;
+    width: @width;
+    border-top: @border;
+    width: @width;
+}
+header{
+    background-color: @secondary;
+    border-bottom: @border * 3 @letter;
+    width: @width;
+    height: @height;
+}
+section{
+    background-color: @primary;
+    width: @width;
+    height: @height * 8;
+}
+footer{
+    background-color: @secondary;
+    height: @height *3;
+}
