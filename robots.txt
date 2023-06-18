@@ -1,0 +1,5 @@
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Yahoo! Slurp
+User-agent: DuckDuckBot
+dissallow: /assets/css
