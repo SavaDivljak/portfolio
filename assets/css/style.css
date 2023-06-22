@@ -593,6 +593,13 @@ footer #copyr {
     width: 450px;
     height: 450px;
   }
+  main #contact form textarea {
+    height: 250px;
+  }
+  main #contact form .fbtn,
+  main #contact form input {
+    height: 30px;
+  }
   main #projects {
     height: 1400px;
   }
@@ -698,13 +705,6 @@ footer #copyr {
   main #contact form {
     width: 400px;
     height: 400px;
-  }
-  main #contact form textarea {
-    height: 250px;
-  }
-  main #contact form .fbtn,
-  main #contact form input {
-    height: 30px;
   }
 }
 @media screen and (max-width: 426px) {
