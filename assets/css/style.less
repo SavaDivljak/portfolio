@@ -678,7 +678,7 @@ footer{
 // 601 //
 @media screen and (max-width: 601px){
     header{
-        height: @dim * 3.8;
+        height: @dim * 1.6;
         @{fd}: @col;
         #logo{
             display: flex !important;
@@ -688,15 +688,14 @@ footer{
         }
         nav{
             width: @rat;
-            height: @dim * 3;
-            @{fd}: @col;
+            height: @dim * 0.8;
             ul{
                 width: @rat;
                 li{
-                    width: @rat;
+                    width: @rat * 0.33;
                     height: @dim * 0.4;
                     &:extend(.cflex);
-                    @{jc}: @c;
+                    @{jc}: @se;
                 }
             }
         }
