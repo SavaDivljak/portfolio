@@ -351,7 +351,6 @@ main #aboutMe #pic {
   border: 10px solid #FF7517;
 }
 main #aboutMe #pic img {
-  width: 100%;
   height: 100%;
 }
 main #aboutMe #stats {
@@ -713,7 +712,6 @@ footer #copyr {
     height: 2100px;
   }
   main #aboutMe #pic {
-    width: 350px;
     height: 440px;
   }
   main #aboutMe #info {
@@ -749,7 +747,6 @@ footer #copyr {
     width: 280px;
   }
   main #aboutMe #pic {
-    width: 280px;
     height: 350px;
   }
   main #services .service {
