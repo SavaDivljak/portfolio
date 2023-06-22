@@ -34,7 +34,6 @@ h2 {
 }
 h3 {
   font-size: 26px;
-  color: #2C2727;
 }
 ul {
   list-style-type: none;
@@ -62,17 +61,21 @@ main #background #title,
 main #background #title #btns,
 main #aboutMe #info,
 main #aboutMe #info .list .track,
-main #services .service,
+main #aboutMe #stats,
+main #aboutMe #stats .stat,
 main #skills .skill,
 main #projects .project,
 main #contact #con,
 main #contact #con .contrack,
+main form,
 footer #links ul,
 #top a,
 main section h1,
 main #background #title .btn,
 main #background #title .btn a,
 main #background #arrow,
+main #services h3,
+main #services i,
 main #skills h2,
 footer,
 footer #copyr {
@@ -85,6 +88,8 @@ main section h1,
 main #background #title .btn,
 main #background #title .btn a,
 main #background #arrow,
+main #services h3,
+main #services i,
 main #skills h2,
 footer,
 footer #copyr {
@@ -98,7 +103,10 @@ footer #copyr {
 header nav a,
 main #background #title .btn,
 main #background #title .btn:hover,
+main #background #title .btn:hover a,
 main #contact #con .contrack .chalf i,
+main form .fbtn,
+main form .fbtn:hover,
 footer #links ul a,
 header nav a:hover,
 main #contact #con .contrack .chalf i:hover,
@@ -106,7 +114,8 @@ footer #links ul a:hover {
   transition-duration: 0.5s;
 }
 .decor,
-main #skills h3 {
+h3,
+main #aboutMe #stats .stat .big {
   color: #FF7517 !important;
 }
 .hover,
@@ -120,26 +129,76 @@ footer #links ul a:hover {
 }
 .stanbor,
 main #aboutMe #info .list,
+main #aboutMe #stats .stat,
 main #services .service,
 main #skills .skill,
 main #projects .project img,
 main #testimonials .rating,
-main #contact #con {
+main #contact #con,
+main form {
   border: 4px solid #FF7517;
 }
 .shad,
 main #aboutMe #info .list,
 main #aboutMe #pic,
+main #aboutMe #stats,
 main #services .service,
 main #skills .skill,
 main #projects .project img,
 main #testimonials .rating,
-main #contact #con {
+main #contact #con,
+main form {
   box-shadow: 0px 0px 8px;
 }
 .rel,
 main #background #title {
   position: relative;
+}
+.icon,
+main #aboutMe #stats .stat i,
+main #services i,
+main #skills .skill i {
+  font-size: 50px;
+}
+@keyframes appearup {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes appeardown {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #2C2727;
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 #top {
   position: fixed;
@@ -183,13 +242,12 @@ main {
 }
 main section {
   justify-content: space-evenly;
-  align-items: center;
-  padding: 0% 2%;
   width: 100%;
 }
 main section h1 {
   width: 100%;
   height: 100px;
+  margin: 0px auto;
 }
 main #background {
   background-image: linear-gradient(180deg, #FF7517, #F6F4F4);
@@ -199,37 +257,14 @@ main #background {
 }
 main #background h1 {
   font-size: 60px;
-}
-main #background h2 {
-  text-align: center;
-  overflow: hidden;
-  border-right: 4px solid #FF7517;
-  white-space: nowrap;
-  margin: 0 auto;
-  animation: type 2.5s steps(50, end), blink 0.5s step-end infinite;
+  animation: appearup 1s;
   opacity: 0;
   animation-fill-mode: forwards;
 }
-@keyframes type {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  100% {
-    width: 235px;
-    opacity: 1;
-  }
-}
-@keyframes blink {
-  0%,
-  100% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #2C2727;
-  }
+main #background h2 {
+  text-align: center;
+  border-right: 4px solid #2C2727;
+  animation: blink 0.8s step-end infinite, appeardown 1s;
 }
 main #background #title {
   top: 120px;
@@ -252,6 +287,9 @@ main #background #title .btn {
   border: 2px solid #FF7517;
   box-shadow: 0 0 4px;
   background-color: #F6F4F4;
+  animation: appeardown 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 main #background #title .btn a {
   font-weight: bold;
@@ -277,20 +315,9 @@ main #background #arrow i {
   font-size: 60px;
   animation: bounce 2s infinite;
 }
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 main #aboutMe {
   display: flex;
-  height: 800px;
+  height: 1000px;
 }
 main #aboutMe #info {
   flex-direction: column;
@@ -324,30 +351,56 @@ main #aboutMe #pic {
   border: 10px solid #FF7517;
 }
 main #aboutMe #pic img {
-  height: 100%;
+  width: 100%;
 }
 main #aboutMe #stats {
-  width: 100%;
+  width: 800px;
   height: 200px;
+  justify-content: space-evenly;
+  align-items: center;
 }
-main #services {
-  height: 900px;
-}
-main #services .service {
-  width: 350px;
-  height: 350px;
+main #aboutMe #stats .stat {
+  width: 25%;
+  height: 100%;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
+main #aboutMe #stats .stat p {
+  text-align: center;
+}
+main #aboutMe #stats .stat .big {
+  font-size: 40px;
+  font-weight: bold;
+}
+main #aboutMe #stats .stat i {
+  color: #2C2727;
+}
+main #services {
+  height: 600px;
+}
+main #services .service {
+  width: 300px;
+  height: 450px;
+  padding: 0 1%;
+}
 main #services h3 {
   width: 100%;
+  text-align: center;
+  height: 80px;
 }
 main #services p {
   width: 100%;
+  text-align: center;
+}
+main #services i {
+  color: #2C2727;
+  height: 80px;
+  text-align: center;
+  width: 100%;
 }
 main #skills {
-  height: 700px;
+  height: 650px;
 }
 main #skills h2 {
   width: 100%;
@@ -361,28 +414,30 @@ main #skills .skill {
   flex-direction: column;
 }
 main #skills .skill i {
-  font-size: 50px;
   color: #2C2727;
 }
 main #projects {
   height: 900px;
 }
 main #projects .project {
-  width: 450px;
+  width: 470px;
   height: 300px;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
+main #projects .project img {
+  width: 100%;
+}
 main #projects .project h2 {
   text-align: center;
 }
 main #testimonials {
-  height: 700px;
+  height: 500px;
 }
 main #testimonials .rating {
   width: 275px;
-  height: 500px;
+  height: 300px;
 }
 main #testimonials .rating h3 {
   width: 100%;
@@ -399,7 +454,8 @@ main #testimonials .rating img {
   border-bottom: 4px solid #FF7517;
 }
 main #contact {
-  height: 600px;
+  height: 700px;
+  align-items: center;
 }
 main #contact #con {
   width: 400px;
@@ -431,6 +487,44 @@ main #contact #con .contrack .soc {
   align-items: center;
   justify-content: space-between;
 }
+main form {
+  width: 500px;
+  height: 500px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+main form input {
+  width: 80%;
+  height: 40px;
+  border: 2px solid #FF7517;
+  padding-left: 2%;
+  color: #2C2727;
+}
+main form textarea {
+  border: 2px solid #FF7517;
+  height: 300px;
+  width: 80%;
+  color: #FF7517;
+  padding: 2%;
+  color: #2C2727;
+}
+main form ::placeholder {
+  color: #2C2727;
+}
+main form .fbtn {
+  width: 100px;
+  height: 50px;
+  border: 2px solid #FF7517;
+  background-color: #FF7517;
+  color: #F6F4F4;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+main form .fbtn:hover {
+  opacity: 0.7;
+}
 footer {
   border-top: 4px solid #FF7517;
   width: 100%;
@@ -450,6 +544,24 @@ footer #copyr {
   width: 40%;
   height: 50px;
 }
+@media screen and (max-width: 1025px) {
+  header nav {
+    width: 70%;
+  }
+  main #skills {
+    height: 900px;
+  }
+  main #skills .skill {
+    width: 245px;
+  }
+  main #testimonials {
+    height: 1000px;
+  }
+  main #testimonials .rating {
+    width: 350px;
+    height: 350px;
+  }
+}
 @media screen and (max-width: 921px) {
   p,
   a {
@@ -463,6 +575,89 @@ footer #copyr {
   }
   h3 {
     font-size: 24px;
+  }
+  #title h1 {
+    font-size: 50px;
+  }
+  .btn {
+    width: 140px !important;
+  }
+  main #services {
+    height: 1200px;
+  }
+  main #services .service {
+    width: 350px;
+    height: 400px;
+  }
+  main #contact form {
+    width: 450px;
+    height: 450px;
+  }
+  main #projects {
+    height: 1400px;
+  }
+}
+@media screen and (max-width: 769px) {
+  header nav {
+    width: 80%;
+  }
+  main #aboutMe {
+    height: 1800px;
+  }
+  main #aboutMe #stats {
+    width: 400px;
+    height: 400px;
+  }
+  main #aboutMe #stats .stat {
+    width: 50%;
+    height: 50%;
+  }
+  main #contact {
+    height: 900px;
+  }
+  main #contact #con {
+    height: 200px;
+  }
+  footer {
+    height: 100px;
+  }
+  footer #links,
+  footer #copyr {
+    width: 100%;
+    height: 50%;
+  }
+}
+@media screen and (max-width: 601px) {
+  header {
+    height: 380px;
+    flex-direction: column;
+  }
+  header #logo {
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+  }
+  header nav {
+    width: 100%;
+    height: 300px;
+    flex-direction: column;
+  }
+  header nav ul {
+    width: 100%;
+  }
+  header nav ul li {
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+  }
+  main #services {
+    height: 1600px;
+  }
+  main #skills {
+    height: 1300px;
+  }
+  main #testimonials {
+    height: 1700px;
   }
 }
 @media screen and (max-width: 481px) {
@@ -482,9 +677,127 @@ footer #copyr {
   h3 {
     font-size: 22px;
   }
+  #title h1 {
+    font-size: 40px !important;
+  }
+  .btn {
+    width: 120px !important;
+  }
+  main #background #title {
+    width: 320px;
+  }
+  main #skills {
+    height: 2100px;
+  }
+  main #projects {
+    height: 1200px;
+  }
+  main #projects .project {
+    width: 380px;
+    height: 260px;
+  }
+  main #contact form {
+    width: 400px;
+    height: 400px;
+  }
+  main #contact form textarea {
+    height: 250px;
+  }
+  main #contact form .fbtn,
+  main #contact form input {
+    height: 30px;
+  }
 }
-@media screen and (max-width: 400px) {
-  #intro {
-    width: 90% !important;
+@media screen and (max-width: 426px) {
+  main #aboutMe {
+    height: 2100px;
+  }
+  main #aboutMe #pic {
+    width: 350px;
+    height: 442.08px;
+  }
+  main #aboutMe #info {
+    width: 350px;
+  }
+  main #aboutMe #stats {
+    width: 200px;
+    height: 800px;
+  }
+  main #aboutMe #stats .stat {
+    width: 100%;
+    height: 25%;
+  }
+  main #services {
+    height: 1400px;
+  }
+  main #services .service {
+    height: 350px;
+  }
+  main #contact #con {
+    width: 350px;
+  }
+  main #contact form {
+    width: 350px;
+    height: 350px;
+  }
+  main #contact form textarea {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 376px) {
+  main #aboutMe #info {
+    width: 280px;
+  }
+  main #aboutMe #pic {
+    width: 280px;
+    height: 352.547px;
+  }
+  main #services .service {
+    width: 280px;
+    height: 390px;
+  }
+  main #projects {
+    height: 1100px;
+  }
+  main #projects .project {
+    width: 280px;
+    height: 230px;
+  }
+  main #testimonials {
+    height: 1500px;
+  }
+  main #testimonials .rating {
+    width: 275px;
+    height: 300px;
+  }
+  main #contact {
+    height: 800px;
+  }
+  main #contact #con {
+    width: 300px;
+  }
+  main #contact form {
+    width: 300px;
+    height: 300px;
+  }
+  main #contact form textarea {
+    height: 150px;
+  }
+  footer {
+    height: 200px;
+  }
+  footer #links {
+    height: 150px;
+  }
+  footer #links ul {
+    width: 100%;
+  }
+  footer #links ul li {
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+  }
+  footer #copyr {
+    height: 30px;
   }
 }

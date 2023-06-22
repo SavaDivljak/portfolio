@@ -11,10 +11,10 @@
 		<meta name="keywords" content="aleksa, savic, web, design, developer, UX/UI, website, portfolio">
 		<meta name="autor" content="Aleksa Savic">
 		<meta name="language" content="english"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<script src="https://cdn.jsdelivr.net/npm/less" ></script>
 		<!-- ICONS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
 	</head>
@@ -124,29 +124,46 @@
 						</div>
 					</div>
 				</div>
+				<div id="stats">
+					<div class="stat">
+						<i class="fa-solid fa-clock"></i>
+						<p class="big">500</p>
+						<p>Hours worked</p>
+					</div>
+					<div class="stat">
+						<i class="fa-solid fa-desktop"></i>
+						<p class="big">5K</p>
+						<p>Projects finished</p>
+					</div>
+					<div class="stat">
+						<i class="fa-solid fa-face-smile"></i>
+						<p class="big">20K</p>
+						<p>Happy clients</p>
+					</div>
+					<div class="stat">
+						<i class="fa-solid fa-mug-hot"></i>
+						<p class="big">20K</p>
+						<p>Coffee drinked</p>
+					</div>
+				</div>
 			</section>
 			<hr/>
 			<section id="services">
 				<h1>Services</h1>
 				<div class="service">
-					<h3></h3>
-					<p></p>
+					<i class="fa-solid fa-desktop"></i>
+					<h3>Front-End Developement</h3>
+					<p>With my knowledge of HTML, CSS and JS, I can make a good-looking design on every type of device (PC, tablet, smartphone) and make interactions between users and my website easy and efficient.</p>
 				</div>
 				<div class="service">
-					<h3></h3>
-					<p></p>
+					<i class="fa-solid fa-code"></i>
+					<h3>Back-End Developement</h3>
+					<p>Website is not just what you see when you access website's URL but also all those codes and databases that ensure website is working properly, so my knowledge of C# and SQL is helpful in this type of website developement.</p>
 				</div>
 				<div class="service">
-					<h3></h3>
-					<p></p>
-				</div>
-				<div class="service">
-					<h3></h3>
-					<p></p>
-				</div>
-				<div class="service">
-					<h3></h3>
-					<p></p>
+					<i class="fa-solid fa-magnifying-glass"></i>
+					<h3>SEO Optimization</h3>
+					<p>This is important thing because you want your website to be ranked as higher as possible on first page of the search, so it can be visible as many people as possible, so in this regard i can help you with my experience.</p>
 				</div>
 			</section>
 			<hr/>
@@ -169,13 +186,18 @@
 					<p>Proficient</p>
 				</div>
 				<div class="skill">
-					<i class="fa-brands fa-bootstrap"></i>
-					<h3>Bootstrap</h3>
-					<p>Beginner</p>
+					<i class="fa-solid fa-database"></i>
+					<h3>SQL</h3>
+					<p>Proficient</p>
 				</div>
 				<div class="skill">
-					<i class="fa-brands fa-php"></i>
-					<h3>PHP</h3>
+					<i class="fa-solid fa-c"></i>
+					<h3>C#</h3>
+					<p>Proficient</p>
+				</div>
+				<div class="skill">
+					<i class="fa-brands fa-bootstrap"></i>
+					<h3>Bootstrap</h3>
 					<p>Beginner</p>
 				</div>
 				<h2>Languages</h2>
@@ -211,12 +233,12 @@
 				<div class="project">
 					<img src="assets/img/project3.jpg"/>
 					<h2>Online Shop Website</h2>
-					<p>HTML, CSS, JS, PHP</p>
+					<p>HTML, CSS, JS</p>
 				</div>
 				<div class="project">
 					<img src="assets/img/project4.jpg"/>
 					<h2>Bootstrap Website</h2>
-					<p>HTML, CSS, JS, PHP, Bootstrap</p>
+					<p>HTML, CSS, JS, Bootstrap</p>
 				</div>
 			</section>
 			<hr/>
@@ -225,22 +247,22 @@
 				<div class="rating">
 					<img src="assets/img/white.jpg"/>
 					<h3>Mileva Maric</h3>
-					<p>he standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+					<p>Talented and dedicated web developer. 10/10 rating!</p>
 				</div>
 				<div class="rating">
 					<img src="assets/img/arab.jpg"/>
 					<h3>Hakim Ziyech</h3>
-					<p>he standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+					<p>Hard-working man, completes projects even before deadline!</p>
 				</div>
 				<div class="rating">
 					<img src="assets/img/black.jpg"/>
 					<h3>Doja Cat</h3>
-					<p>he standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+					<p>Very good web designer, although he somewhat lacks experience.</p>
 				</div>
 				<div class="rating">
 					<img src="assets/img/yellow.jpg"/>
 					<h3>Bruce Lee</h3>
-					<p>he standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+					<p>Inspiring and beautiful UX/UI design.</p>
 				</div>
 			</section>
 			<hr/>
@@ -273,16 +295,10 @@
 					</div>
 				</div>
 				<form action="#" method="get">
-					<label for="imprem">Full name:</label>
-					<input type="text" name="nam" id="nam" placeholder="John Doe" required="required" />
-					<label for="imejl">Email:</label>
-					<input type="email" name="email" id="email" placeholder="example@gmail.com" required="required" />
-					<label for="mesidz">Message me:</label>
-					<textarea type="text" name="mess" id="mess" required="required"></textarea>
-					<div id="fbtns">
-						<input class="fbtn" type="submit" id="send" name="send" value="Send" />
-						<input class="fbtn" type="reset" id="reset" name="reset" value="Reset" />
-					</div>
+					<input type="text" name="nam" id="nam" placeholder="Full name:" required="required" />
+					<input type="email" name="email" id="email" placeholder="Email:" required="required" />
+					<textarea type="text" name="mess" id="mess" required="required" placeholder="Write me:"></textarea>
+					<input class="fbtn" type="submit" id="send" name="send" value="Send" />
 				</form>
 			</section>
 		</main>
