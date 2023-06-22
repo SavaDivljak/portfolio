@@ -352,6 +352,7 @@ main #aboutMe #pic {
 }
 main #aboutMe #pic img {
   width: 100%;
+  height: 100%;
 }
 main #aboutMe #stats {
   width: 800px;
@@ -714,7 +715,7 @@ footer #copyr {
   }
   main #aboutMe #pic {
     width: 350px;
-    height: 442.08px;
+    height: 440px;
   }
   main #aboutMe #info {
     width: 350px;
@@ -750,7 +751,7 @@ footer #copyr {
   }
   main #aboutMe #pic {
     width: 280px;
-    height: 352.547px;
+    height: 350px;
   }
   main #services .service {
     width: 280px;
